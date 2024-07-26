@@ -34,7 +34,7 @@ def blog_post(blog_post_id):
                            post = blog_post)
 
 
-@blog_post.route("/<int:blog_post_id>/update", methods = ["POST", "GET"]):
+@blog_post.route("/<int:blog_post_id>/update", methods = ["POST", "GET"])
 @login_required
 def update(blog_post_id):
     blog_post = BlogPost.query.get_or_404(blog_post_id)
@@ -58,7 +58,7 @@ def update(blog_post_id):
     return render_template("create_post.html", title="Updating", form = form)
 
 
-@blog_post.route("/<int:blog_post_id>/delete", methods = ["POST", "GET"]):
+@blog_post.route("/<int:blog_post_id>/delete", methods = ["POST", "GET"])
 @login_required
 def delete(blog_post_id):
     blog_post = BlogPost.query.get_or_404(blog_post_id)
